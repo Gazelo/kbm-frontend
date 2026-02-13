@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="sk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Kategórie – KBM</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <!-- Drawer -->
+  <aside id="drawer" class="drawer" aria-hidden="true">
+    <div class="drawer__panel">
+      <div class="drawer__top">
+        <div class="drawer__brand">KBM</div>
+        <button class="iconbtn" id="drawerClose" aria-label="Zavrieť menu">✕</button>
+      </div>
+
+      <nav class="drawer__nav">
+        <a href="./index.html" class="drawer__link">Produkty</a>
+        <a href="./kategorie.html" class="drawer__link isActive">Kategórie</a>
+        <a href="#" class="drawer__link">Novinky</a>
+        <a href="#" class="drawer__link">O nás</a>
+      </nav>
+
+      <div class="drawer__footer">
+        <div class="drawer__meta">
+          <a href="#" class="drawer__mini">Kontakt</a>
+          <a href="#" class="drawer__mini">Prihlásiť</a>
+          <a href="#" class="drawer__mini">Jazyk</a>
+        </div>
+      </div>
+    </div>
+    <div class="drawer__backdrop" id="drawerBackdrop"></div>
+  </aside>
+
+  <header class="topbar topbar--plain">
+    <div class="topbar__left">
+      <button class="iconbtn" id="burger" aria-label="Menu">☰</button>
+      <a class="topbar__link" href="./index.html">späť</a>
+    </div>
+    <div class="topbar__center"><div class="logo">KBM</div></div>
+    <div class="topbar__right">
+      <a class="topbar__link" href="#">prihlásenie</a>
+      <a class="topbar__link" href="#">košík</a>
+    </div>
+  </header>
+
+  <main class="page">
+    <div class="container">
+      <h1 class="page__title">Kategórie produktov</h1>
+      <div class="catgrid" id="categoryGrid"></div>
+    </div>
+  </main>
+
+  <script src="./data.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
