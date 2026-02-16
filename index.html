@@ -3,40 +3,15 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>KBM – B2B</title>
+  <title>KBM – Produkty</title>
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
-  <!-- Drawer (hamburger menu) -->
-  <aside id="drawer" class="drawer" aria-hidden="true">
-    <div class="drawer__panel">
-      <div class="drawer__top">
-        <div class="drawer__brand">KBM</div>
-        <button class="iconbtn" id="drawerClose" aria-label="Zavrieť menu">✕</button>
-      </div>
 
-      <nav class="drawer__nav">
-        <a href="./index.html" class="drawer__link isActive">Produkty</a>
-        <a href="./kategorie.html" class="drawer__link">Kategórie</a>
-        <a href="#" class="drawer__link">Novinky</a>
-        <a href="#" class="drawer__link">O nás</a>
-      </nav>
-
-      <div class="drawer__footer">
-        <div class="drawer__meta">
-          <a href="#" class="drawer__mini">Kontakt</a>
-          <a href="#" class="drawer__mini">Prihlásiť</a>
-          <a href="#" class="drawer__mini">Jazyk</a>
-        </div>
-      </div>
-    </div>
-    <div class="drawer__backdrop" id="drawerBackdrop"></div>
-  </aside>
-
-  <!-- Header -->
+  <!-- HEADER -->
   <header class="topbar">
     <div class="topbar__left">
-      <button class="iconbtn" id="burger" aria-label="Menu">☰</button>
+      <button class="iconbtn" aria-label="Menu">☰</button>
       <a class="topbar__link" href="./kategorie.html">kategórie</a>
     </div>
 
@@ -50,65 +25,96 @@
     </div>
   </header>
 
-  <main>
-    <!-- HERO with animated assets -->
-    <section class="hero">
-      <div class="container hero__grid hero__stage">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container heroMain">
 
-        <!-- Images positioned like your design + animated -->
-        <img class="heroItem heroItem--bearing" src="./assets/hero/lozisko.png" alt="" />
-        <img class="heroItem heroItem--linear"  src="./assets/hero/linearna.png" alt="" />
-        <img class="heroItem heroItem--tape"    src="./assets/hero/paska.png" alt="" />
-        <img class="heroItem heroItem--rings"   src="./assets/hero/puzdra.png" alt="" />
-        <img class="heroItem heroItem--roller"  src="./assets/hero/valec.png" alt="" />
-        <img class="heroItem heroItem--chain"   src="./assets/hero/retaz.png" alt="" />
+      <!-- floating assets -->
+      <img class="heroItem heroItem--bearing" src="./assets/hero/lozisko.png" alt="" />
+      <img class="heroItem heroItem--rings"   src="./assets/hero/puzdra.png" alt="" />
+      <img class="heroItem heroItem--linear"  src="./assets/hero/linearna.png" alt="" />
+      <img class="heroItem heroItem--tape"    src="./assets/hero/paska.png" alt="" />
+      <img class="heroItem heroItem--roller"  src="./assets/hero/valec.png" alt="" />
+      <img class="heroItem heroItem--chain"   src="./assets/hero/retaz.png" alt="" />
 
-        <div class="hero__content">
-          <h1>Všetko pre váš priemysel<br/>na jednom mieste.</h1>
-          <p>
-            Široký sortiment spoľahlivej techniky, expresné dodanie a profesionálny servis.
-            Pre malé dielne aj veľké závody.
-          </p>
+      <!-- content -->
+      <div class="heroMain__content">
+        <h1>Všetko pre váš priemysel<br/>na jednom mieste.</h1>
+        <p>
+          Široký sortiment spoľahlivej techniky, expresné dodanie a profesionálny servis.<br/>
+          Pre malé dielne aj veľké závody.
+        </p>
 
-          <div class="search">
-            <div class="search__icon">🔎</div>
-            <input id="searchInput" type="text" placeholder="Hľadať podľa označenia…" />
-            <button id="searchBtn" class="btn btn--primary">Hľadať</button>
-          </div>
-
-          <div class="hero__hint">
-            Príklady: <span>6204 2RS</span>, <span>H205</span>, <span>UCFL204</span>
-          </div>
+        <div class="search">
+          <div class="search__icon">🔍</div>
+          <input type="text" placeholder="Hľadať podľa označenia..." />
+          <button class="btn">Hľadať</button>
         </div>
       </div>
 
-      <div class="hero__wave"></div>
-    </section>
+    </div>
 
-    <!-- Tiles -->
-    <section class="section section--lift">
-      <div class="container grid3" id="homeTiles"></div>
-    </section>
+    <!-- WAVES (multi-layer like screenshot) -->
+    <div class="waves" aria-hidden="true">
+      <svg class="waves__svg" viewBox="0 0 1440 280" preserveAspectRatio="none">
+        <!-- layer 1 (light) -->
+        <path d="M0,175 C160,150 320,210 480,190 C640,170 800,220 960,198 C1120,176 1280,214 1440,188 L1440,280 L0,280 Z"
+              fill="#F2B300" opacity="0.65"/>
+        <!-- layer 2 -->
+        <path d="M0,195 C180,235 340,150 520,190 C700,230 880,145 1040,185 C1200,225 1320,165 1440,195 L1440,280 L0,280 Z"
+              fill="#E7AA00" opacity="0.60"/>
+        <!-- layer 3 -->
+        <path d="M0,215 C220,155 420,265 640,205 C860,145 1040,265 1220,215 C1340,185 1400,205 1440,220 L1440,280 L0,280 Z"
+              fill="#D79A00" opacity="0.55"/>
+        <!-- layer 4 (darkest yellow ridge) -->
+        <path d="M0,235 C220,300 420,170 620,235 C820,300 1010,170 1200,235 C1320,275 1400,240 1440,245 L1440,280 L0,280 Z"
+              fill="#C78B00" opacity="0.55"/>
+      </svg>
+    </div>
 
-    <!-- Bestsellers -->
-    <section class="section">
-      <div class="container section__head">
-        <h2>Najpredávanejšie skladom</h2>
-        <button class="btn btn--ghost">Zobraziť všetko</button>
+    <!-- BLACK FOOTER STRIP -->
+    <div class="heroStrip">
+      <svg class="heroStrip__svg" viewBox="0 0 1440 230" preserveAspectRatio="none" aria-hidden="true">
+        <!-- black with small wavy top edge -->
+        <path d="M0,55 C220,20 420,95 640,55 C860,15 1040,95 1220,55 C1340,30 1400,45 1440,55 L1440,230 L0,230 Z"
+              fill="#0b0b0b"/>
+      </svg>
+
+      <div class="container heroStrip__inner">
+        <div class="heroFeat">
+          <div class="heroFeat__ico">
+            <!-- cube icon-ish -->
+            <span>⬛</span>
+          </div>
+          <div>
+            <div class="heroFeat__title">+20 000 produktov</div>
+            <div class="heroFeat__desc">Skladom okamžite</div>
+          </div>
+        </div>
+
+        <div class="heroFeat">
+          <div class="heroFeat__ico">
+            <span>🚚</span>
+          </div>
+          <div>
+            <div class="heroFeat__title">Expresné dodanie</div>
+            <div class="heroFeat__desc">do 48 hodín</div>
+          </div>
+        </div>
+
+        <div class="heroFeat">
+          <div class="heroFeat__ico">
+            <span>⚖️</span>
+          </div>
+          <div>
+            <div class="heroFeat__title">Firmy a maloobchody</div>
+            <div class="heroFeat__desc">Férové ceny</div>
+          </div>
+        </div>
       </div>
-      <div class="container products" id="bestsellers"></div>
-    </section>
+    </div>
 
-    <!-- Company strip -->
-    <section class="company">
-      <div class="container">
-        <div class="company__title">Pre firmy</div>
-        <div class="company__grid" id="companyFeatures"></div>
-      </div>
-    </section>
-  </main>
+  </section>
 
-  <script src="./data.js"></script>
-  <script src="./app.js"></script>
 </body>
 </html>
