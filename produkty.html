@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="sk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>KBM – Produkty</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body class="pageProducts">
+
+  <!-- HEADER -->
+  <header class="topbar topbar--products">
+    <div class="topbar__left">
+  <button class="iconbtn" id="burger" aria-label="Menu">☰</button>
+
+  <nav class="topNav">
+    <a class="topNav__link" href="produkty.html">Produkty</a>
+    <a class="topNav__link" href="kategorie.html">Kategórie</a>
+  </nav>
+</div>
+
+
+    <div class="topbar__center">
+      <div class="logo">KBM</div>
+      <div class="topSearch">
+        <span class="topSearch__ico">🔍</span>
+        <input class="topSearch__input" placeholder="Hľadať" />
+      </div>
+    </div>
+
+    <div class="topbar__right">
+      <a class="topbar__link" href="#">prihlásenie</a>
+      <a class="topbar__link" href="#">košík</a>
+    </div>
+  </header>
+
+  <main class="productsWrap">
+    <!-- FILTERS -->
+    <aside class="filters">
+      <div class="filters__card">
+        <div class="filters__title">Cena</div>
+        <input type="range" min="0" max="500" value="220" />
+        <div class="filters__muted">do 500€</div>
+
+        <div class="filters__title" style="margin-top:14px;">Dostupnosť</div>
+        <label class="radio"><input type="radio" name="dost" checked> všetok tovar</label>
+        <label class="radio"><input type="radio" name="dost"> skladom</label>
+        <label class="radio"><input type="radio" name="dost"> aj ext. skladom</label>
+        <label class="radio"><input type="radio" name="dost"> na objednávku</label>
+
+        <div class="filters__title" style="margin-top:14px;">Výrobca</div>
+        <label class="check"><input type="checkbox" checked> SFK</label>
+        <label class="check"><input type="checkbox"> ZVL</label>
+        <label class="check"><input type="checkbox" checked> ZKL</label>
+        <label class="check"><input type="checkbox"> CHINA</label>
+
+        <div class="filters__title" style="margin-top:14px;">LOZ. Vonkajší priemer (D)</div>
+        <select class="select"><option>Vyberte</option></select>
+
+        <div class="filters__title" style="margin-top:12px;">LOZ. Vnútorný priemer (d)</div>
+        <select class="select"><option>Vyberte</option></select>
+
+        <div class="filters__title" style="margin-top:12px;">LOZ. Šírka (B)</div>
+        <select class="select"><option>Vyberte</option></select>
+
+        <div class="filters__title" style="margin-top:12px;">Hmotnosť</div>
+        <select class="select"><option>Vyberte</option></select>
+      </div>
+    </aside>
+
+    <!-- CONTENT -->
+    <section class="productsContent">
+      <div class="breadcrumb" id="breadcrumb">Domov > Produkty</div>
+
+      <!-- SUBCATEGORY TILES (top small cards) -->
+      <div class="subcats">
+        <a class="subcat" href="#"><img src="./assets/hero/lozisko.png" alt=""><div><b>Ložiská</b><span>zobraziť</span></div><i>›</i></a>
+        <a class="subcat" href="#"><img src="./assets/hero/lozisko.png" alt=""><div><b>Ložiská</b><span>zobraziť</span></div><i>›</i></a>
+        <a class="subcat" href="#"><img src="./assets/hero/lozisko.png" alt=""><div><b>Ložiská</b><span>zobraziť</span></div><i>›</i></a>
+        <a class="subcat" href="#"><img src="./assets/hero/lozisko.png" alt=""><div><b>Ložiská</b><span>zobraziť</span></div><i>›</i></a>
+      </div>
+
+      <!-- GRID -->
+      <div class="grid">
+        <!-- CARD 1 -->
+        <article class="card">
+          <div class="card__img">
+            <img src="./assets/hero/lozisko.png" alt="">
+          </div>
+          <div class="card__meta">
+            <div class="card__topline"><span>3001</span><span class="brand">SCHAEFFLER</span></div>
+            <div class="sku">Obj. č.: 000899844-0000</div>
+            <div class="desc">Angular contact ball bearing, two row, bearing series 30</div>
+
+            <div class="badges">
+              <span class="badge badge--ok">● skladom</span>
+            </div>
+
+            <div class="priceRow">
+              <div class="price">22,99 €</div>
+              <div class="vat">bez DPH</div>
+              <button class="buy">🛒 Košík</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- CARD 2 -->
+        <article class="card">
+          <div class="card__img"><img src="./assets/hero/lozisko.png" alt=""></div>
+          <div class="card__meta">
+            <div class="card__topline"><span>3001</span><span class="brand">SCHAEFFLER</span></div>
+            <div class="sku">Obj. č.: 000899844-0000</div>
+            <div class="desc">Angular contact ball bearing, two row, bearing series 30</div>
+            <div class="badges">
+              <span class="badge badge--no">● vypredané</span>
+            </div>
+            <div class="priceRow">
+              <div class="price">22,99 €</div>
+              <div class="vat">bez DPH</div>
+              <button class="buy">🛒 Košík</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- CARD 3 -->
+        <article class="card">
+          <div class="card__img"><img src="./assets/hero/lozisko.png" alt=""></div>
+          <div class="card__meta">
+            <div class="card__topline"><span>3001</span><span class="brand">SCHAEFFLER</span></div>
+            <div class="sku">Obj. č.: 000899844-0000</div>
+            <div class="desc">Angular contact ball bearing, two row, bearing series 30</div>
+            <div class="badges">
+              <span class="badge badge--warn">● na objednávku</span>
+            </div>
+            <div class="priceRow">
+              <div class="price">22,99 €</div>
+              <div class="vat">bez DPH</div>
+              <button class="buy">🛒 Košík</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- CARD 4 -->
+        <article class="card">
+          <div class="card__img"><img src="./assets/hero/lozisko.png" alt=""></div>
+          <div class="card__meta">
+            <div class="card__topline"><span>3001</span><span class="brand">SCHAEFFLER</span></div>
+            <div class="sku">Obj. č.: 000899844-0000</div>
+            <div class="desc">Angular contact ball bearing, two row, bearing series 30</div>
+            <div class="badges">
+              <span class="badge badge--ok">● skladom</span>
+            </div>
+            <div class="priceRow">
+              <div class="price">22,99 €</div>
+              <div class="vat">bez DPH</div>
+              <button class="buy">🛒 Košík</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <script>
+  (function(){
+    const mapCat = { loziska: "Ložiská" };
+    const mapSub = {
+      gulickove: "Guľkové ložiská",
+      valcekove: "Valčekové ložiská",
+      ihlove: "Ihlové ložiská",
+      axialne: "Axiálne ložiská",
+      domceky: "Domčeky"
+    };
+
+    const params = new URLSearchParams(location.search);
+    const cat = params.get("cat") || "";
+    const sub = params.get("sub") || "";
+
+    const catName = mapCat[cat] || "Produkty";
+    const subName = mapSub[sub] || "";
+
+    const bc = document.getElementById("breadcrumb");
+    if(bc){
+      bc.textContent = subName
+        ? `Domov > ${catName} > ${subName}`
+        : `Domov > ${catName}`;
+    }
+  })();
+  </script>
+
+</body>
+</html>

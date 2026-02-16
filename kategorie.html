@@ -3,56 +3,188 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Kategórie – KBM</title>
+  <title>KBM – Kategórie</title>
   <link rel="stylesheet" href="./styles.css" />
 </head>
-<body>
-  <!-- Drawer -->
-  <aside id="drawer" class="drawer" aria-hidden="true">
-    <div class="drawer__panel">
-      <div class="drawer__top">
-        <div class="drawer__brand">KBM</div>
-        <button class="iconbtn" id="drawerClose" aria-label="Zavrieť menu">✕</button>
-      </div>
 
-      <nav class="drawer__nav">
-        <a href="./index.html" class="drawer__link">Produkty</a>
-        <a href="./kategorie.html" class="drawer__link isActive">Kategórie</a>
-        <a href="#" class="drawer__link">Novinky</a>
-        <a href="#" class="drawer__link">O nás</a>
-      </nav>
+<body class="pageCategories">
 
-      <div class="drawer__footer">
-        <div class="drawer__meta">
-          <a href="#" class="drawer__mini">Kontakt</a>
-          <a href="#" class="drawer__mini">Prihlásiť</a>
-          <a href="#" class="drawer__mini">Jazyk</a>
-        </div>
-      </div>
-    </div>
-    <div class="drawer__backdrop" id="drawerBackdrop"></div>
-  </aside>
-
-  <header class="topbar topbar--plain">
+  <!-- HEADER (rovnaký štýl ako produkty) -->
+  <header class="topbar topbar--products">
     <div class="topbar__left">
-      <button class="iconbtn" id="burger" aria-label="Menu">☰</button>
-      <a class="topbar__link" href="./index.html">späť</a>
+      <button class="iconbtn" aria-label="Menu" onclick="location.href='index.html'">☰</button>
+      <a class="topbar__link" href="produkty.html">produkty</a>
+      <a class="topbar__link topbar__link--active" href="kategorie.html">kategórie</a>
     </div>
-    <div class="topbar__center"><div class="logo">KBM</div></div>
+
+    <div class="topbar__center">
+      <div class="logo">KBM</div>
+
+      <div class="topSearch">
+        <span class="topSearch__ico">🔍</span>
+        <input class="topSearch__input" id="catSearch" placeholder="Hľadať kategóriu (napr. ložiská, reťaze...)" />
+      </div>
+    </div>
+
     <div class="topbar__right">
       <a class="topbar__link" href="#">prihlásenie</a>
       <a class="topbar__link" href="#">košík</a>
     </div>
   </header>
 
-  <main class="page">
-    <div class="container">
-      <h1 class="page__title">Kategórie produktov</h1>
-      <div class="catgrid" id="categoryGrid"></div>
+  <main class="catsWrap">
+    <div class="catsHead">
+      <h1>Kategórie produktov</h1>
+      <p>Vyber si typ produktu alebo filtruj podľa kľúčového slova.</p>
+
+      <div class="catsTabs" role="tablist" aria-label="Filtre kategórií">
+        <button class="tab is-active" type="button" data-tab="all">Všetko</button>
+        <button class="tab" type="button" data-tab="top">Top</button>
+        <button class="tab" type="button" data-tab="new">Nové</button>
+      </div>
     </div>
+
+    <section class="catsGrid" id="catsGrid">
+      <!-- CARD -->
+      <a class="catCard is-top" href="produkty.html?cat=loziska" data-title="ložiská">
+        <div class="catCard__bg"></div>
+        <div class="catCard__body">
+          <div class="catCard__left">
+            <h3>Ložiská</h3>
+            <div class="catCard__meta">18 400 produktov</div>
+            <div class="catCard__btn">zobraziť produkty <span>›</span></div>
+          </div>
+          <img class="catCard__img" src="./assets/hero/lozisko.png" alt="">
+        </div>
+        <span class="catCard__tag">TOP</span>
+      </a>
+
+      <a class="catCard is-new" href="produkty.html?cat=linearna" data-title="lineárna technika linearne vedenia">
+        <div class="catCard__bg"></div>
+        <div class="catCard__body">
+          <div class="catCard__left">
+            <h3>Lineárna technika</h3>
+            <div class="catCard__meta">154 produktov</div>
+            <div class="catCard__btn">zobraziť produkty <span>›</span></div>
+          </div>
+          <img class="catCard__img" src="./assets/hero/linearna.png" alt="">
+        </div>
+        <span class="catCard__tag">NOVÉ</span>
+      </a>
+
+      <a class="catCard" href="produkty.html?cat=retaze" data-title="reťaze retaze">
+        <div class="catCard__bg"></div>
+        <div class="catCard__body">
+          <div class="catCard__left">
+            <h3>Reťaze</h3>
+            <div class="catCard__meta">264 produktov</div>
+            <div class="catCard__btn">zobraziť produkty <span>›</span></div>
+          </div>
+          <img class="catCard__img" src="./assets/hero/retaz.png" alt="">
+        </div>
+      </a>
+
+      <a class="catCard" href="produkty.html?cat=remene" data-title="remene valce">
+        <div class="catCard__bg"></div>
+        <div class="catCard__body">
+          <div class="catCard__left">
+            <h3>Remene / valce</h3>
+            <div class="catCard__meta">332 produktov</div>
+            <div class="catCard__btn">zobraziť produkty <span>›</span></div>
+          </div>
+          <img class="catCard__img" src="./assets/hero/valec.png" alt="">
+        </div>
+      </a>
+
+      <a class="catCard" href="produkty.html?cat=pasky" data-title="pásky spotrebný material pasky">
+        <div class="catCard__bg"></div>
+        <div class="catCard__body">
+          <div class="catCard__left">
+            <h3>Pásky / spotrebný</h3>
+            <div class="catCard__meta">370 produktov</div>
+            <div class="catCard__btn">zobraziť produkty <span>›</span></div>
+          </div>
+          <img class="catCard__img" src="./assets/hero/paska.png" alt="">
+        </div>
+      </a>
+
+      <a class="catCard" href="produkty.html?cat=puzdra" data-title="puzdra kruzky">
+        <div class="catCard__bg"></div>
+        <div class="catCard__body">
+          <div class="catCard__left">
+            <h3>Puzdrá / krúžky</h3>
+            <div class="catCard__meta">637 produktov</div>
+            <div class="catCard__btn">zobraziť produkty <span>›</span></div>
+          </div>
+          <img class="catCard__img" src="./assets/hero/puzdra.png" alt="">
+        </div>
+      </a>
+
+      <a class="catCard" href="produkty.html?cat=spojky" data-title="spojky spoj">
+        <div class="catCard__bg"></div>
+        <div class="catCard__body">
+          <div class="catCard__left">
+            <h3>Spojky / spoj.</h3>
+            <div class="catCard__meta">280 produktov</div>
+            <div class="catCard__btn">zobraziť produkty <span>›</span></div>
+          </div>
+          <img class="catCard__img" src="./assets/hero/valec.png" alt="">
+        </div>
+      </a>
+
+      <a class="catCard" href="produkty.html?cat=maziva" data-title="mazivá oleje maziva">
+        <div class="catCard__bg"></div>
+        <div class="catCard__body">
+          <div class="catCard__left">
+            <h3>Mazivá</h3>
+            <div class="catCard__meta">415 produktov</div>
+            <div class="catCard__btn">zobraziť produkty <span>›</span></div>
+          </div>
+          <img class="catCard__img" src="./assets/hero/valec.png" alt="">
+        </div>
+      </a>
+    </section>
   </main>
 
-  <script src="./data.js"></script>
-  <script src="./app.js"></script>
+  <script>
+  (function(){
+    const search = document.getElementById("catSearch");
+    const grid = document.getElementById("catsGrid");
+    const cards = Array.from(grid.querySelectorAll(".catCard"));
+
+    function normalize(s){ return (s||"").toLowerCase().trim(); }
+
+    function applyFilter(){
+      const q = normalize(search.value);
+      cards.forEach(c => {
+        const hay = normalize(c.getAttribute("data-title")) + " " + normalize(c.textContent);
+        c.style.display = hay.includes(q) ? "" : "none";
+      });
+    }
+
+    search.addEventListener("input", applyFilter);
+
+    // Tabs
+    const tabs = Array.from(document.querySelectorAll(".tab"));
+    tabs.forEach(t => t.addEventListener("click", () => {
+      tabs.forEach(x => x.classList.remove("is-active"));
+      t.classList.add("is-active");
+
+      const mode = t.getAttribute("data-tab");
+      cards.forEach(c => {
+        const isTop = c.classList.contains("is-top");
+        const isNew = c.classList.contains("is-new");
+
+        if(mode === "top") c.style.display = isTop ? "" : "none";
+        else if(mode === "new") c.style.display = isNew ? "" : "none";
+        else c.style.display = "";
+      });
+
+      // po prepnutí tabov znovu apply search
+      applyFilter();
+    }));
+  })();
+  </script>
+
 </body>
 </html>

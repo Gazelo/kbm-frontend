@@ -3,17 +3,134 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>KBM – Produkty</title>
+  <title>KBM – Domov</title>
   <link rel="stylesheet" href="./styles.css" />
 </head>
+
 <body>
 
-  <!-- HEADER -->
-  <header class="topbar">
-    <div class="topbar__left">
-      <button class="iconbtn" aria-label="Menu">☰</button>
-      <a class="topbar__link" href="./kategorie.html">kategórie</a>
+  <!-- HAMBURGER DRAWER -->
+  <div class="drawer" id="drawer" aria-hidden="true">
+    <div class="drawer__overlay" id="drawerOverlay"></div>
+
+    <div class="drawer__panel">
+      <div class="drawer__pages" id="drawerPages">
+
+        <!-- LEVEL 1 -->
+        <section class="drawer__level" id="levelMain" data-level>
+          <div class="drawer__top drawer__top--main">
+            <div></div>
+            <div class="drawer__title drawer__title--big">Menu</div>
+            <button class="drawer__closebtn" type="button" data-close aria-label="Zavrieť">✕</button>
+          </div>
+
+          <nav class="drawer__main" aria-label="Hlavné menu">
+            <a class="drawer__mainItem" href="produkty.html">
+              <span>Produkty</span>
+              <span class="drawer__chev drawer__chev--big">›</span>
+            </a>
+
+            <button class="drawer__mainItem" type="button" data-open="levelCategories">
+              <span>Kategórie</span>
+            </button>
+
+            <a class="drawer__mainItem" href="#"><span>Novinky</span></a>
+            <a class="drawer__mainItem" href="#"><span>O nás</span></a>
+          </nav>
+
+          <div class="drawer__footer drawer__footer--main">
+            <div class="drawer__footerRow">
+              <a href="#">Kontakt</a>
+              <a href="#">Prihlásiť</a>
+            </div>
+            <a href="#">Jazyk</a>
+          </div>
+        </section>
+
+        <!-- LEVEL 2 -->
+        <section class="drawer__level" id="levelCategories" data-level>
+          <div class="drawer__top">
+            <button class="drawer__backbtn" type="button" data-back aria-label="Späť">‹</button>
+            <div class="drawer__title">Menu</div>
+            <div></div>
+          </div>
+
+          <div class="drawer__row drawer__row--tight">
+            <div class="drawer__sectionTitle">Kategórie</div>
+            <a class="drawer__sectionLink" href="#">prehľadať</a>
+          </div>
+
+          <div class="drawer__section">
+
+            <!-- ACCORDION: LOŽISKÁ -->
+            <div class="drawer__acc" data-acc>
+              <button class="drawer__cat drawer__accBtn" type="button"
+                      aria-expanded="false" aria-controls="acc-loziska">
+                <span class="drawer__catLeft">
+                  <img class="drawer__catIco" src="./assets/hero/lozisko.png" alt="">
+                  <span>Ložiská</span>
+                </span>
+                <span class="drawer__chev">›</span>
+              </button>
+
+              <div class="drawer__accPanel" id="acc-loziska" role="region" aria-hidden="true">
+                <a class="drawer__sub" href="produkty.html?cat=loziska&sub=gulickove">Guličkové</a>
+                <a class="drawer__sub" href="produkty.html?cat=loziska&sub=valcekove">Valčekové</a>
+                <a class="drawer__sub" href="produkty.html?cat=loziska&sub=ihlove">Ihlové</a>
+                <a class="drawer__sub" href="produkty.html?cat=loziska&sub=axialne">Axiálne</a>
+                <a class="drawer__sub" href="produkty.html?cat=loziska&sub=domceky">Domčeky</a>
+              </div>
+            </div>
+
+            <button class="drawer__cat" type="button">
+              <span class="drawer__catLeft">
+                <img class="drawer__catIco" src="./assets/hero/linearna.png" alt="">
+                <span>Lineárne vedenia</span>
+              </span>
+              <span class="drawer__chev">›</span>
+            </button>
+
+            <button class="drawer__cat" type="button">
+              <span class="drawer__catLeft">
+                <img class="drawer__catIco" src="./assets/hero/paska.png" alt="">
+                <span>Pásky</span>
+              </span>
+              <span class="drawer__chev">›</span>
+            </button>
+
+            <button class="drawer__cat" type="button">
+              <span class="drawer__catLeft">
+                <img class="drawer__catIco" src="./assets/hero/retaz.png" alt="">
+                <span>Reťaze</span>
+              </span>
+              <span class="drawer__chev">›</span>
+            </button>
+          </div>
+
+          <div class="drawer__footer">
+            <div class="drawer__footerRow">
+              <a href="#">Kontakt</a>
+              <a href="#">Prihlásiť</a>
+            </div>
+            <a href="#">Jazyk</a>
+          </div>
+        </section>
+
+      </div>
     </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="topbar topbar--hero">
+    <div class="topbar__left">
+  <button class="iconbtn" id="burger" aria-label="Menu">☰</button>
+
+  <nav class="topNav">
+    <a class="topNav__link" href="produkty.html">Produkty</a>
+    <a class="topNav__link" href="kategorie.html">Kategórie</a>
+  </nav>
+</div>
+
 
     <div class="topbar__center">
       <div class="logo">KBM</div>
@@ -54,38 +171,30 @@
 
     </div>
 
-    <!-- WAVES (multi-layer like screenshot) -->
+    <!-- WAVES -->
     <div class="waves" aria-hidden="true">
       <svg class="waves__svg" viewBox="0 0 1440 280" preserveAspectRatio="none">
-        <!-- layer 1 (light) -->
         <path d="M0,175 C160,150 320,210 480,190 C640,170 800,220 960,198 C1120,176 1280,214 1440,188 L1440,280 L0,280 Z"
               fill="#F2B300" opacity="0.65"/>
-        <!-- layer 2 -->
         <path d="M0,195 C180,235 340,150 520,190 C700,230 880,145 1040,185 C1200,225 1320,165 1440,195 L1440,280 L0,280 Z"
               fill="#E7AA00" opacity="0.60"/>
-        <!-- layer 3 -->
         <path d="M0,215 C220,155 420,265 640,205 C860,145 1040,265 1220,215 C1340,185 1400,205 1440,220 L1440,280 L0,280 Z"
               fill="#D79A00" opacity="0.55"/>
-        <!-- layer 4 (darkest yellow ridge) -->
         <path d="M0,235 C220,300 420,170 620,235 C820,300 1010,170 1200,235 C1320,275 1400,240 1440,245 L1440,280 L0,280 Z"
               fill="#C78B00" opacity="0.55"/>
       </svg>
     </div>
 
-    <!-- BLACK FOOTER STRIP -->
+    <!-- BLACK STRIP -->
     <div class="heroStrip">
       <svg class="heroStrip__svg" viewBox="0 0 1440 230" preserveAspectRatio="none" aria-hidden="true">
-        <!-- black with small wavy top edge -->
         <path d="M0,55 C220,20 420,95 640,55 C860,15 1040,95 1220,55 C1340,30 1400,45 1440,55 L1440,230 L0,230 Z"
               fill="#0b0b0b"/>
       </svg>
 
       <div class="container heroStrip__inner">
         <div class="heroFeat">
-          <div class="heroFeat__ico">
-            <!-- cube icon-ish -->
-            <span>⬛</span>
-          </div>
+          <div class="heroFeat__ico"><span>⬛</span></div>
           <div>
             <div class="heroFeat__title">+20 000 produktov</div>
             <div class="heroFeat__desc">Skladom okamžite</div>
@@ -93,9 +202,7 @@
         </div>
 
         <div class="heroFeat">
-          <div class="heroFeat__ico">
-            <span>🚚</span>
-          </div>
+          <div class="heroFeat__ico"><span>🚚</span></div>
           <div>
             <div class="heroFeat__title">Expresné dodanie</div>
             <div class="heroFeat__desc">do 48 hodín</div>
@@ -103,9 +210,7 @@
         </div>
 
         <div class="heroFeat">
-          <div class="heroFeat__ico">
-            <span>⚖️</span>
-          </div>
+          <div class="heroFeat__ico"><span>⚖️</span></div>
           <div>
             <div class="heroFeat__title">Firmy a maloobchody</div>
             <div class="heroFeat__desc">Férové ceny</div>
@@ -115,6 +220,91 @@
     </div>
 
   </section>
+
+  <script>
+  (function () {
+    const drawer  = document.getElementById("drawer");
+    const pages   = document.getElementById("drawerPages");
+    const burger  = document.getElementById("burger");
+    const overlay = document.getElementById("drawerOverlay");
+
+    const levelIndex = { levelMain: 0, levelCategories: 1 };
+    const history = ["levelMain"];
+
+    function setLevel(id){
+      const idx = levelIndex[id] ?? 0;
+      pages.style.setProperty("--x", `-${idx * 100}%`);
+    }
+
+    function openDrawer(){
+      drawer.classList.add("open");
+      drawer.setAttribute("aria-hidden","false");
+      document.body.style.overflow = "hidden";
+      history.length = 0;
+      history.push("levelMain");
+      setLevel("levelMain");
+    }
+
+    function closeDrawer(){
+      drawer.classList.remove("open");
+      drawer.setAttribute("aria-hidden","true");
+      document.body.style.overflow = "";
+      history.length = 0;
+      history.push("levelMain");
+      setLevel("levelMain");
+    }
+
+    burger.addEventListener("click", openDrawer);
+    overlay.addEventListener("click", closeDrawer);
+
+    document.addEventListener("keydown", (e) => {
+      if(e.key === "Escape" && drawer.classList.contains("open")) closeDrawer();
+    });
+
+    document.querySelectorAll("[data-open]").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const id = btn.getAttribute("data-open");
+        history.push(id);
+        setLevel(id);
+      });
+    });
+
+    document.querySelectorAll("[data-back]").forEach(btn => {
+      btn.addEventListener("click", () => {
+        history.pop();
+        const prev = history[history.length - 1] || "levelMain";
+        setLevel(prev);
+      });
+    });
+
+    document.querySelectorAll("[data-close]").forEach(btn => {
+      btn.addEventListener("click", closeDrawer);
+    });
+
+    // ACCORDION
+    document.querySelectorAll("[data-acc]").forEach(acc => {
+      const btn = acc.querySelector(".drawer__accBtn");
+      const panel = acc.querySelector(".drawer__accPanel");
+      if(!btn || !panel) return;
+
+      btn.addEventListener("click", () => {
+        const isOpen = acc.classList.toggle("is-open");
+        btn.setAttribute("aria-expanded", String(isOpen));
+        panel.setAttribute("aria-hidden", String(!isOpen));
+      });
+    });
+
+    // Close drawer when clicking any link in drawer
+    document.querySelectorAll(".drawer a").forEach(a => {
+      a.addEventListener("click", () => {
+        drawer.classList.remove("open");
+        drawer.setAttribute("aria-hidden","true");
+        document.body.style.overflow = "";
+      });
+    });
+
+  })();
+  </script>
 
 </body>
 </html>
